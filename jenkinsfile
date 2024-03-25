@@ -14,7 +14,7 @@ pipeline {
                 git 'https://github.com/joamani/https-echo.git'
                 
                 // Build the Go application
-                sh 'go build -o http-echo .'
+                //sh 'go build -o http-echo .'
             }
         }
         
