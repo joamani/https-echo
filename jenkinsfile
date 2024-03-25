@@ -5,8 +5,7 @@ pipeline {
         // Set environment variables for authentication (replace with your registry credentials)
         REGISTRY_CREDENTIALS = 'jenkins-repo'
         REGISTRY_URL = '891377029200.dkr.ecr.us-east-1.amazonaws.com/jenkins-repo'
-        DOCKER IMAGE = ''
-    }
+        }
     
     stages {
         stage('Build Go Application') {
