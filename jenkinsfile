@@ -35,6 +35,6 @@ pipeline {
                     docker.image("${REGISTRY_URL}/http-echo:latest").withPush(true)
                 }
             }
-      ~  }
+        }
     }
 }
