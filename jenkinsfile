@@ -28,7 +28,7 @@ pipeline {
             }
         }
         
-        stage('Push Docker Image to Local Registry') {
+        stage('Deploy Docker image') {
             steps {
                 script {
                     // Tag the Docker image for the local registry
