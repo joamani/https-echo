@@ -23,3 +23,4 @@ EXPOSE 5678/tcp
 ENV ECHO_TEXT="hello-world"
 
 ENTRYPOINT ["/http-echo"]
+
