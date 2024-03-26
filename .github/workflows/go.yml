@@ -11,7 +11,7 @@ on:
 
 name: Setup Go environment
 
-  uses: actions/setup-go@v5.0.0
+uses: actions/setup-go@v5.0.0
   with:
     # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
     go-version: # optional
