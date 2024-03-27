@@ -18,7 +18,7 @@ LABEL name="http-echo" \
       release=$PRODUCT_VERSION \
       summary="A test webserver that echos a response. You know, for kids."
 
-COPY --from=builder /go-server/http-echo .
+COPY --from=builder /app/http-echo .
 
 EXPOSE 5678/tcp
 
