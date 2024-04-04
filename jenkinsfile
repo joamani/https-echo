@@ -1,6 +1,12 @@
 pipeline {
     agent any
-        
+    
+    environment {
+        DOCKER_IMAGE_NAME = 'myapp'
+        DOCKER_REGISTRY = 'docker.io' // Replace with your Docker registry URL
+        DOCKER_REGISTRY_CREDENTIAL_ID = 'dev' // Replace with your Jenkins credentials ID for Docker registry authentication
+    }
+    
     stages {
         stage('Build Go App') {
             steps {
@@ -8,7 +14,7 @@ pipeline {
                 git 'https://github.com/joamani/https-echo.git'
                 
                 // Build Go binary
-                sh 'go build -o app ./'
+                sh 'go build -o app .'
             }
         }
         
@@ -16,7 +22,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    docker.build("docker.io/myapp}:latest", '.')
+                    docker.build("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:latest", '.')
                 }
             }
         }
@@ -25,8 +31,8 @@ pipeline {
             steps {
                 // Push Docker image to registry
                 script {
-                    docker.withRegistry("docker.io", "dev") {
-                        docker.image("docker.io/dev}:latest").push()
+                    docker.withRegistry("${DOCKER_REGISTRY}", "${DOCKER_REGISTRY_CREDENTIAL_ID}") {
+                        docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:latest").push()
                     }
                 }
             }
