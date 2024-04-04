@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'http-echo'
         DOCKER_REGISTRY = 'docker.io'
-        DOCKER_REGISTRY_CREDENTIAL_ID = 'e74d6f86-5d62-433b-b6a8-ca11fc1e9c4c'
+        DOCKER_REGISTRY_CREDENTIAL_ID = 'jenkins-repo'
     }
     
     stages {
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Login to Docker registry
-                    docker.withRegistry('docker.io', 'e74d6f86-5d62-433b-b6a8-ca11fc1e9c4c') {
+                    docker.withRegistry('docker.io', 'jenkins-repo') {
                         // Push Docker image to registry
                         docker.image(DOCKER_IMAGE_NAME).push('latest')
                     }
