@@ -1,4 +1,3 @@
-
 # Use a minimal Go base image
 FROM golang:alpine AS builder
 
