@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker build -t http-echo .
+                    docker.build("http-echo" .)
                 }
             }
         }
