@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build("https-echo")
+                    docker build -t https-echo:latest .
                 }
             }
         }
