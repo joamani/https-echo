@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'amani4real/https-echo'
+        DOCKER_IMAGE = 'amani4real/http-echo'
         PRODUCT_VERSION = '1.0.0'
     }
 
