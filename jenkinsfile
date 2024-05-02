@@ -12,7 +12,11 @@ pipeline {
             steps {
                 // Checkout source code from your repository
                 git 'https://github.com/joamani/https-echo.git'
-                
+
+                // Add a step to list files in the workspace
+                bat 'ls -la' // This command lists all files in the workspace
+                // Alternatively, you can use 'dir' command on Windows systems
+
                 // Build Go binary
                 sh 'go build -o app .'
             }
