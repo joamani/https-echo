@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker build -t https-echo .
+                    docker.build("https-echo")
                 }
             }
         }
