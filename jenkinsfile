@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build(env.DOCKER_IMAGE, "-f Dockerfile --build-arg PRODUCT_VERSION=${env.PRODUCT_VERSION} --build-arg BIN_NAME=${env.BIN_NAME} .")
+                    docker build -t https-echo .}
                 }
             }
         }
