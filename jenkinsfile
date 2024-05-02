@@ -13,7 +13,6 @@ pipeline {
                 script {
                     // Build Docker image
                     docker build -t https-echo .
-                }
             }
         }
 
