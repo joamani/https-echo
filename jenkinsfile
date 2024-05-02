@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'myapp'
         DOCKER_REGISTRY = 'docker.io' // Replace with your Docker registry URL
-        DOCKER_REGISTRY_CREDENTIAL_ID = 'dev' // Replace with your Jenkins credentials ID for Docker registry authentication
+        DOCKER_REGISTRY_CREDENTIAL_ID = 'dockerhub-credentials' // Replace with your Jenkins credentials ID for Docker registry authentication
     }
     
     stages {
